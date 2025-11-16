@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetPal - Premium Pet Store</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="PetPal Logo" class="header-logo">
+            <h1>PetPal</h1>
+        </div>
+        <nav>
+            <button id="cart-btn" class="cart-button">
+                <span class="cart-icon">🛒</span>
+                <span>Cart</span>
+                <span class="cart-badge" id="cart-count">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-logo-wrapper">
+                    <img src="images/logo.png" alt="PetPal Logo" class="hero-logo">
+                </div>
+                <h2 class="hero-title">Welcome to PetPal!</h2>
+                <p class="hero-subtitle">Your one-stop shop for premium pet supplies</p>
+                <p class="hero-description">Discover quality products that your furry, feathered, and scaled friends will love</p>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <h2 class="section-title">Pet Services</h2>
+            <p class="section-subtitle">Professional care for your beloved pets</p>
+            <div class="services" id="services-list">
+                <!-- Services will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="products-section">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products" id="product-list">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 PetPal. All rights reserved.</p>
+            <p>Made with ❤️ for your pets</p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button id="close-cart" class="close-btn">&times;</button>
+            </div>
+            <div class="cart-body">
+                <ul id="cart-items"></ul>
+                <div class="cart-empty" id="cart-empty">Your cart is empty</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-amount">$<span id="cart-total">0</span></span>
+                </div>
+                <button id="checkout-btn" class="checkout-button">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
