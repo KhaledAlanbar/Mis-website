@@ -33,3 +33,5 @@ build/
 *.min.js
 *.min.css
 
+BUSINESS_REPORT.md
+
