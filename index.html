@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetPal - Premium Pet Store</title>
+    <meta name="description" content="PetPal - Your one-stop shop for premium pet supplies and professional pet care services. Discover quality products and expert services for your beloved pets.">
+    <meta name="keywords" content="pet supplies, pet store, pet products, pet services, pet grooming, pet training, pet care">
+    <meta name="author" content="PetPal">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PetPal - Premium Pet Store">
+    <meta property="og:description" content="Your one-stop shop for premium pet supplies and professional pet care services">
+    <meta property="og:image" content="images/logo.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PetPal - Premium Pet Store">
+    <meta name="twitter:description" content="Your one-stop shop for premium pet supplies and professional pet care services">
+    
+    <title>PetPal - Premium Pet Store | Quality Pet Supplies & Services</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" href="images/logo.png">
@@ -13,71 +28,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header role="banner">
         <div class="logo-container">
-            <img src="images/logo.png" alt="PetPal Logo" class="header-logo">
+            <img src="images/logo.png" alt="PetPal Logo" class="header-logo" width="50" height="50">
             <h1>PetPal</h1>
         </div>
-        <nav>
-            <button id="cart-btn" class="cart-button">
-                <span class="cart-icon">🛒</span>
+        <nav role="navigation" aria-label="Main navigation">
+            <button id="cart-btn" class="cart-button" aria-label="Shopping cart" aria-expanded="false">
+                <span class="cart-icon" aria-hidden="true">🛒</span>
                 <span>Cart</span>
-                <span class="cart-badge" id="cart-count">0</span>
+                <span class="cart-badge" id="cart-count" aria-live="polite">0</span>
             </button>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
+    <main role="main">
+        <section class="hero" aria-label="Hero section">
             <div class="hero-content">
                 <div class="hero-logo-wrapper">
-                    <img src="images/logo.png" alt="PetPal Logo" class="hero-logo">
+                    <img src="images/logo.png" alt="PetPal Logo" class="hero-logo" width="250" height="250">
                 </div>
                 <h2 class="hero-title">Welcome to PetPal!</h2>
                 <p class="hero-subtitle">Your one-stop shop for premium pet supplies</p>
                 <p class="hero-description">Discover quality products that your furry, feathered, and scaled friends will love</p>
+                <a href="#products-section" class="hero-cta-button" aria-label="Browse our products">Shop Now</a>
             </div>
         </section>
 
-        <section class="services-section">
-            <h2 class="section-title">Pet Services</h2>
+        <section class="services-section" id="services-section" aria-labelledby="services-heading">
+            <h2 class="section-title" id="services-heading">Pet Services</h2>
             <p class="section-subtitle">Professional care for your beloved pets</p>
-            <div class="services" id="services-list">
+            <div class="services" id="services-list" role="list" aria-label="Available pet services">
                 <!-- Services will be loaded here by JavaScript -->
             </div>
         </section>
 
-        <section class="products-section">
-            <h2 class="section-title">Our Products</h2>
-            <div class="products" id="product-list">
+        <section class="products-section" id="products-section" aria-labelledby="products-heading">
+            <h2 class="section-title" id="products-heading">Our Products</h2>
+            <p class="section-subtitle">Premium quality products for your pets</p>
+            <div class="products" id="product-list" role="list" aria-label="Available pet products">
                 <!-- Products will be loaded here by JavaScript -->
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-content">
+            <div class="footer-section">
+                <h3>PetPal</h3>
+                <p>Your trusted partner in pet care</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services-section">Services</a></li>
+                    <li><a href="#products-section">Products</a></li>
+                    <li><a href="#cart-btn">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@petpal.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2024 PetPal. All rights reserved.</p>
             <p>Made with ❤️ for your pets</p>
         </div>
     </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top-button" aria-label="Scroll to top" title="Scroll to top">
+        <span aria-hidden="true">↑</span>
+    </button>
 
-    <div id="cart-modal" class="cart-modal">
+    <div id="cart-modal" class="cart-modal" role="dialog" aria-labelledby="cart-title" aria-modal="true">
         <div class="cart-content">
             <div class="cart-header">
-                <h2>Shopping Cart</h2>
-                <button id="close-cart" class="close-btn">&times;</button>
+                <h2 id="cart-title">Shopping Cart</h2>
+                <button id="close-cart" class="close-btn" aria-label="Close cart">&times;</button>
             </div>
             <div class="cart-body">
-                <ul id="cart-items"></ul>
-                <div class="cart-empty" id="cart-empty">Your cart is empty</div>
+                <ul id="cart-items" role="list"></ul>
+                <div class="cart-empty" id="cart-empty" role="status" aria-live="polite">Your cart is empty</div>
             </div>
             <div class="cart-footer">
                 <div class="cart-total">
                     <span>Total:</span>
-                    <span class="total-amount">$<span id="cart-total">0</span></span>
+                    <span class="total-amount" aria-label="Total amount">$<span id="cart-total">0</span></span>
                 </div>
-                <button id="checkout-btn" class="checkout-button">Checkout</button>
+                <button id="checkout-btn" class="checkout-button" aria-label="Proceed to checkout">Checkout</button>
             </div>
         </div>
     </div>

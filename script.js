@@ -78,7 +78,7 @@ services.forEach((service, index) => {
             <h3>${service.name}</h3>
             <p class="service-description">${service.description}</p>
             <p class="service-price">$${service.price}</p>
-            <button onclick="bookService(${service.id})">Book Now</button>
+            <button onclick="bookService(${service.id}, event)">Book Now</button>
         `;
         servicesList.appendChild(serviceEl);
     }, index * 100);
@@ -101,9 +101,24 @@ products.forEach((product, index) => {
 });
 
 // Book service function
-function bookService(id) {
+function bookService(id, event) {
     const service = services.find(s => s.id === id);
     if (service) {
+        // Add visual feedback to the button
+        const button = event ? event.target : null;
+        if (button) {
+            const originalText = button.textContent;
+            button.textContent = '✓ Booked!';
+            button.style.background = 'linear-gradient(135deg, #27ae60 0%, #229954 100%)';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+                button.disabled = false;
+            }, 2000);
+        }
+        
         showNotification(`${service.name} service booked! We'll contact you soon.`);
     }
 }
@@ -119,11 +134,15 @@ function addToCart(id) {
         cart.push({...product, quantity: 1});
     }
 
-    // Animate cart button
-    cartBtn.style.transform = 'scale(1.1)';
+    // Animate cart button with bounce
+    cartBtn.style.animation = 'none';
     setTimeout(() => {
-        cartBtn.style.transform = 'scale(1)';
-    }, 200);
+        cartBtn.style.animation = 'bounce 0.5s ease-out';
+    }, 10);
+    
+    setTimeout(() => {
+        cartBtn.style.animation = '';
+    }, 500);
 
     updateCart();
     
@@ -146,6 +165,8 @@ function showNotification(message) {
         z-index: 3000;
         animation: slideInRight 0.3s ease-out;
         font-weight: 500;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     `;
     notification.textContent = message;
     document.body.appendChild(notification);
@@ -192,11 +213,13 @@ function updateCart() {
 // Show/hide cart modal with smooth transitions
 cartBtn.addEventListener('click', () => {
     cartModal.classList.add('active');
+    cartBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
 });
 
 closeCart.addEventListener('click', () => {
     cartModal.classList.remove('active');
+    cartBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
 });
 
@@ -204,6 +227,7 @@ closeCart.addEventListener('click', () => {
 cartModal.addEventListener('click', (e) => {
     if (e.target === cartModal) {
         cartModal.classList.remove('active');
+        cartBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 });
@@ -212,6 +236,7 @@ cartModal.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && cartModal.classList.contains('active')) {
         cartModal.classList.remove('active');
+        cartBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 });
@@ -226,6 +251,24 @@ checkoutBtn.addEventListener('click', () => {
     updateCart();
     cartModal.classList.remove('active');
     document.body.style.overflow = '';
+});
+
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById('scroll-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('visible');
+    } else {
+        scrollTopBtn.classList.remove('visible');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 // Add CSS animations dynamically
