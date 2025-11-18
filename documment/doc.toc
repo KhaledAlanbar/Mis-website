@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Company and Mission}{3}{}%
+\contentsline {section}{\numberline {2}Services and Pricing}{3}{}%
+\contentsline {section}{\numberline {3}Financial Projections (Year 1)}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Startup Costs}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Production and Revenue}{3}{}%
+\contentsline {subsection}{\numberline {3.3}3-Year Financial Forecast}{3}{}%
+\contentsline {subsection}{\numberline {3.4}Break-Even Analysis}{3}{}%
+\contentsline {section}{\numberline {4}Target Market Analysis}{4}{}%
+\contentsline {subsection}{\numberline {4.1}Primary Target Market (Demographics)}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Psychographics and Behavior}{4}{}%
+\contentsline {subsection}{\numberline {4.3}Regional and International Market Opportunities}{4}{}%
+\contentsline {section}{\numberline {5}Global Trends and AI Ecosystem}{4}{}%
+\contentsline {section}{\numberline {6}Competitors}{4}{}%
+\contentsline {section}{\numberline {7}Website Development and Deployment}{5}{}%
+\contentsline {subsection}{\numberline {7.1}Website Development Process}{5}{}%
+\contentsline {subsection}{\numberline {7.2}Deployment}{5}{}%
+\contentsline {section}{\numberline {8}Team Roles and Contributions}{6}{}%
+\contentsline {subsection}{\numberline {8.1}Khaled Alanbar (202211365)}{6}{}%
+\contentsline {subsection}{\numberline {8.2}Fahad bin Taleb (202311297) and Rakan Aldhafeeri (202311320)}{6}{}%
+\contentsline {subsection}{\numberline {8.3}Suliman Mohammed (201911057)}{6}{}%
